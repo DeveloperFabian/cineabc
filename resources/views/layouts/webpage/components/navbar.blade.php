@@ -19,10 +19,13 @@
                         <span class="text-center text-white">Catalogo de peliculas</span>
                     </div>
                     @auth
-                        <div class="col d-flex align-items-center justify-content-center">
-                            <span class="text-center text-white">Mi historial</span>
-                        </div>
+                        @can('client')
+                            <div class="col d-flex align-items-center justify-content-center">
+                                <span class="text-center text-white">Mi historial</span>
+                            </div>
+                        @endcan
                     @endauth
+
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -37,23 +40,19 @@
                         <span class="text-white">{{ Auth::user()->name }}</span>
                     </a>
                 @else
-                <div class="row">
-                    <div class="col d-flex align-items-center justify-content-center">
-                        <a href="javascript:;" class="text-decoration-none text-white fw-bold mt-2" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+                    <div class="row">
+                        <div class="col d-flex align-items-center justify-content-center">
+                            <a href="javascript:;" class="text-decoration-none text-white fw-bold mt-2"
+                                data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+                        </div>
                     </div>
-                </div>
                 @endauth
                 <div class="dropdown-menu dropdown-menu-end bg-dark">
-                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"
-                            data-feather="user"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i>
-                        Analytics</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i>
-                        Settings & Privacy</a>
-                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i>
-                        Help Center</a>
-                    <div class="dropdown-divider"></div>
+                    @can('administration')
+                        <a class="dropdown-item" href="{{ route('administration.home') }}"><i class="align-middle me-1"
+                                data-feather="user"></i>Panel administrativo</a>
+                        <div class="dropdown-divider"></div>
+                    @endcan
                     <a class="dropdown-item" href="#">Log out</a>
                 </div>
             </li>
