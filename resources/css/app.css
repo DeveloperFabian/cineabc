@@ -15756,9 +15756,18 @@ span.flatpickr-weekday {
     }
 }
 
-.card-movie{
+.card-movie {
     width: 250px;
     max-width: 100% !important;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /*# sourceMappingURL=app.css.map*/

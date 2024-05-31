@@ -38,17 +38,23 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         $data = new Movie();
-
+    
         $data->title = $request->input('title');
         $data->director = $request->input('director');
         $data->year = $request->input('year');
         $data->genre = $request->input('genre');
         $data->time = $request->input('time');
         $data->classification = $request->input('classification');
+    
+        if ($request->hasFile('file')) {
+            $data->addMedia($request->file('file'))->toMediaCollection('movies');
+        }
+    
         $data->save();
-
+    
         return redirect()->route('administration.movie.index');
     }
+    
 
     public function update(Request $request, $id)
     {

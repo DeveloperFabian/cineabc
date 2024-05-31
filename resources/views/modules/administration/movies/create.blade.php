@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="col mb-5">
-                <form action="{{ route('administration.movie.store') }}" method="POST">
+                <form action="{{ route('administration.movie.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row-reverse">
                         <div class="col mb-4">
@@ -56,6 +56,15 @@
                                             class="text-danger fw-bold">*</span></label>
                                     <input type="text" name="classification" id="classification" class="form-control"
                                         data-title="Correo electrónico" value="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="name" class="fw-bold mb-2">ADJUNTAR IMAGEN <span
+                                            class="text-danger fw-bold">*</span></label>
+                                    <input type="file" name="file" id="file" class="form-control" required>
                                 </div>
                             </div>
                         </div>

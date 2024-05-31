@@ -17,9 +17,21 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="{{ route('home') }}">Volver a la webpage</a>
-                    <a class="dropdown-item" href="#">Log out</a>
+                    <form action="{{ route('logout') }}" method="post" id="logout-form">
+                        @csrf
+                        <a class="dropdown-item" href="javascript:;" id="logout-link">Log out</a>
+                    </form>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
+
+<script>
+    const logoutLink = document.getElementById('logout-link');
+    const logoutForm = document.getElementById('logout-form');
+
+    logoutLink.addEventListener('click', () => {
+        logoutForm.submit();
+    });
+</script>

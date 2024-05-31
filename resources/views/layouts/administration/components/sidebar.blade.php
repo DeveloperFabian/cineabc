@@ -11,7 +11,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="index.html">
+                <a class="sidebar-link" href="{{route('administration.home')}}">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Inicio</span>
                 </a>
             </li>
@@ -31,12 +31,6 @@
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{route('administration.client.index')}}">
                     <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Clientes</span>
-                </a>
-            </li>
-
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="maps-google.html">
-                    <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Cerrar Sesion</span>
                 </a>
             </li>
         </ul>

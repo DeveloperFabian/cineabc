@@ -27,21 +27,5 @@
                 </div>
             </div>
         </div>
-		<div class="col px-7">
-			<div class="card bg-dark">
-				<div class="col-md-4 m-4">
-					<div class="card card-movie m-2">
-						<img src="https://es.web.img3.acsta.net/c_310_420/medias/nmedia/18/70/92/02/20149073.jpg"
-							class="card-img-top" alt="">
-						<div class="card-body">
-							<h5 class="card-title text-dark">sdfsdf</h5>
-							<p class="card-text text-dark">{{ strlen($text) > 50 ? substr($text, 0, 50) . '...' : $text }}</p>
-							<p class="card-text text-dark"><small class="text-muted">2020-20-20</small></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        
     </div>
 @endsection
