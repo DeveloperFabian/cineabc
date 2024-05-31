@@ -17,7 +17,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-profile.html">
+                <a class="sidebar-link" href="{{route('administration.movie.index')}}">
                     <i class="align-middle" data-feather="map"></i> <span class="align-middle">Peliculas</span>
                 </a>
             </li>
